@@ -92,7 +92,7 @@
                 }
                 //url 조정
                 console.log(wsurl);
-                wsurl = "ws://cobot.center:8286/pang/ws/sub?channel=instant&name=dGVzdA==&track=<label>"
+                wsurl = "ws://cobot.center:8286/pang/ws/sub?channel=instant&name=mars_cam&track=<label>"
                 ws = new WebSocket(wsurl);
                 ws.binaryType = 'arraybuffer';
 
@@ -179,12 +179,12 @@
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     let imageSize = {
-        width : 320,
-        height : 240
+        width : 640,
+        height : 480
     }
     window.onload = () => {
-        canvas.style.width = 320;
-        canvas.style.height = 240;
+        canvas.style.width = 640;
+        canvas.style.height = 480;
     }
         function draw(data) {
             var arrayBufferView = new Uint8Array( data );
