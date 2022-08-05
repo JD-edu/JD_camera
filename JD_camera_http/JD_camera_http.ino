@@ -11,8 +11,8 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "6F_AP"
-#define WIFI_PASSWD "12345678"
+#define WIFI_SSID   "codinglab"
+#define WIFI_PASSWD "codinglab"
 
 #include "select_pins.h"
 
@@ -132,6 +132,8 @@ bool setupCamera()
         config.fb_count = 1;
     }
 
+    pinMode(13, INPUT_PULLUP);
+    pinMode(14, INPUT_PULLUP);
     // camera init
     esp_err_t err = esp_camera_init(&config);
     if (err != ESP_OK) {
@@ -186,7 +188,8 @@ void setup()
     Serial.print("setupCamera status "); 
     Serial.println(status);
     if (!status) {
-        delay(10000); esp_restart();
+        delay(10000);
+        esp_restart();
     }
     // WiFi setup
     setupNetwork();

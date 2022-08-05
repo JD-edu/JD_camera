@@ -21,8 +21,8 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "GBSA0001"
-#define WIFI_PASSWD "GBSA0001"
+#define WIFI_SSID   "codinglab2G(2)"
+#define WIFI_PASSWD "codinglab"
 
 // Moth server setting 
 const char* websockets_server_host = "cobot.center";
