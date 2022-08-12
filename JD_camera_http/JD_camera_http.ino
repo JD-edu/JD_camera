@@ -11,8 +11,8 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "codinglab"
-#define WIFI_PASSWD "codinglab"
+#define WIFI_SSID   "codinglab2G"
+#define WIFI_PASSWD "codinglab1122"
 
 #include "select_pins.h"
 
