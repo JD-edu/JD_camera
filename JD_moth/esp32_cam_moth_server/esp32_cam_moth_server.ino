@@ -21,8 +21,8 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "codinglab2G(2)"
-#define WIFI_PASSWD "codinglab"
+#define WIFI_SSID   "GBSA0001"
+#define WIFI_PASSWD "GBSA0001"
 
 // Moth server setting 
 const char* websockets_server_host = "cobot.center";
@@ -212,7 +212,8 @@ void setupNetwork()
     client.onEvent(onEventsCallback);
     
     // Connect Moth server 
-    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=dGVzdA==&track=<label>")) {
+    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
+    //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam1&track=<label>")) {
         delay(500);
         Serial.print(".");
         oled.clear();
