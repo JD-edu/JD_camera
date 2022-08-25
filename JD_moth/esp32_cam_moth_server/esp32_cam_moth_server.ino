@@ -21,12 +21,14 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "GBSA0001"
-#define WIFI_PASSWD "GBSA0001"
+#define WIFI_SSID   "jdedu9807"
+#define WIFI_PASSWD "jdedu9807"
 
 // Moth server setting 
-const char* websockets_server_host = "cobot.center";
-const uint16_t websockets_server_port = 8286;
+//const char* websockets_server_host = "cobot.center";
+//const uint16_t websockets_server_port = 8286;
+const char* websockets_server_host = "192.168.0.77";
+const uint16_t websockets_server_port = 8276;
 using namespace websockets;
 WebsocketsClient client;
 
@@ -212,8 +214,8 @@ void setupNetwork()
     client.onEvent(onEventsCallback);
     
     // Connect Moth server 
-    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
-    //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam1&track=<label>")) {
+    //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
+    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=cakjdgsk058s72qr0psg&track=<label>")) {
         delay(500);
         Serial.print(".");
         oled.clear();
