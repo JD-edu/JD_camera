@@ -215,7 +215,7 @@ void setupNetwork()
     
     // Connect Moth server 
     //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
-    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=cakjdgsk058s72qr0psg&track=<label>")) {
+    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=c3rl4286n88jq9lrl3ng&track=<label>")) {
         delay(500);
         Serial.print(".");
         oled.clear();
