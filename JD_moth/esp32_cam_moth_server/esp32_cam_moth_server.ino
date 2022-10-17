@@ -21,14 +21,14 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "jdedu9807"
-#define WIFI_PASSWD "jdedu9807"
+#define WIFI_SSID   "GBSA0001"
+#define WIFI_PASSWD "GBSA0001"
 
 // Moth server setting 
-//const char* websockets_server_host = "cobot.center";
-//const uint16_t websockets_server_port = 8286;
-const char* websockets_server_host = "192.168.0.77";
-const uint16_t websockets_server_port = 8276;
+const char* websockets_server_host = "cobot.center";
+const uint16_t websockets_server_port = 8286;
+//const char* websockets_server_host = "192.168.0.77";addd
+//const uint16_t websockets_server_port = 8276;
 using namespace websockets;
 WebsocketsClient client;
 
@@ -164,7 +164,8 @@ bool setupCamera()
     config.pixel_format = PIXFORMAT_JPEG;
     //init with high specs to pre-allocate larger buffers
     if (psramFound()) {
-        config.frame_size = FRAMESIZE_UXGA;
+        //config.frame_size = FRAMESIZE_UXGA;
+        config.frame_size = FRAMESIZE_SVGA;
         config.jpeg_quality = 10;
         config.fb_count = 2;
     } else {
@@ -190,9 +191,9 @@ bool setupCamera()
         s->set_saturation(s, -2);//lower the saturation
     }
     //drop down frame size for higher initial frame rate
-    s->set_framesize(s, FRAMESIZE_QVGA);
-    s->set_vflip(s, 1);
-    s->set_hmirror(s, 1);
+    s->set_framesize(s, FRAMESIZE_SVGA);
+    //s->set_vflip(s, 1);
+    //s->set_hmirror(s, 1);
     return true;
 }
 

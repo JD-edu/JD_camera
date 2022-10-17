@@ -11,8 +11,8 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "codinglab2G"
-#define WIFI_PASSWD "codinglab1122"
+#define WIFI_SSID   "GBSA0001"
+#define WIFI_PASSWD "GBSA0001"
 
 #include "select_pins.h"
 
@@ -149,7 +149,8 @@ bool setupCamera()
         s->set_saturation(s, -2);//lower the saturation
     }
     //drop down frame size for higher initial frame rate
-    s->set_framesize(s, FRAMESIZE_QVGA);
+    //s->set_framesize(s, FRAMESIZE_QVGA);
+    s->set_framesize(s, FRAMESIZE_VGA);
     return true;
 }
 WiFiServer wifiServer(83);
