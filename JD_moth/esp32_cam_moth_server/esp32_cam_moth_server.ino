@@ -215,8 +215,10 @@ void setupNetwork()
     client.onEvent(onEventsCallback);
     
     // Connect Moth server 
+    // mars_cam_1: c3rl3c86n88jq9lrl3gg
+    // mars_cam_2: c3rl3f86n88jq9lrl3hg
     //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
-    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=c3rl4286n88jq9lrl3ng&track=<label>")) {
+    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=c3rl3f86n88jq9lrl3hg&track=<label>")) {
         delay(500);
         Serial.print(".");
         oled.clear();
