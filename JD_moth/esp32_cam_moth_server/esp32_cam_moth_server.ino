@@ -21,14 +21,14 @@
 /***************************************
  *  WiFi
  **************************************/
-#define WIFI_SSID   "GBSA0001"
-#define WIFI_PASSWD "GBSA0001"
+#define WIFI_SSID   "jdedu9807"
+#define WIFI_PASSWD "jdedu9807"
 
 // Moth server setting 
-const char* websockets_server_host = "cobot.center";
-const uint16_t websockets_server_port = 8286;
-//const char* websockets_server_host = "192.168.0.77";addd
-//const uint16_t websockets_server_port = 8276;
+//const char* websockets_server_host = "cobot.center";
+//const uint16_t websockets_server_port = 8286;
+const char* websockets_server_host = "192.168.0.77";
+const uint16_t websockets_server_port = 8276;
 using namespace websockets;
 WebsocketsClient client;
 
@@ -186,13 +186,13 @@ bool setupCamera()
     sensor_t *s = esp_camera_sensor_get();
     //initial sensors are flipped vertically and colors are a bit saturated
     if (s->id.PID == OV3660_PID) {
-        s->set_vflip(s, 1);//flip it back
+        s->set_vflip(s, 0);//flip it back
         s->set_brightness(s, 1);//up the blightness just a bit
         s->set_saturation(s, -2);//lower the saturation
     }
     //drop down frame size for higher initial frame rate
-    s->set_framesize(s, FRAMESIZE_SVGA);
-    //s->set_vflip(s, 1);
+    s->set_framesize(s, FRAMESIZE_QVGA);
+    s->set_vflip(s, 1);
     //s->set_hmirror(s, 1);
     return true;
 }
@@ -218,7 +218,7 @@ void setupNetwork()
     // mars_cam_1: c3rl3c86n88jq9lrl3gg
     // mars_cam_2: c3rl3f86n88jq9lrl3hg
     //while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=instant&name=mars_rover_cam2&track=<label>")) {
-    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=c3rl3f86n88jq9lrl3hg&track=<label>")) {
+    while(!client.connect(websockets_server_host, websockets_server_port, "/pang/ws/pub?channel=c3rl43o6n88jq9lrl3og&track=<label>")) { //legMars-8
         delay(500);
         Serial.print(".");
         oled.clear();
